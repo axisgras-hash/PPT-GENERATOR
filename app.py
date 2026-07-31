@@ -107,7 +107,7 @@ def agent_prompt(query):
 def run_agent(leader_agent, query):
   prompt = f"""Based on Below given Query,
   your task is to call specific tool, first to
-  promptify user prompt, than call image tool, or
+  promptify user prompt,or
   latest search if required.give slide dynamic, ui ux,
   with creative design, keep help of function to generate image
   based on given topic,
@@ -145,7 +145,8 @@ if (user_input) and (leader_agent):
     if st.button("Generate Image", key = "Gen-Image"):
       with st.spinner("Running Agent"):
         try:
-          generate_image(user_input)
+          img = generate_image(user_input)
+          st.image(img)
         except:
           url = f"https://image.pollinations.ai/{user_input}"
           time.sleep(4)
