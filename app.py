@@ -78,7 +78,7 @@ def generate_image(img_prompt,slide_no = 1):
 
   from PIL import Image
   img = Image.open(f"ai_image_{slide_no}.jpeg")
-  return img
+  return url
 
 
 def agent_prompt(query):
