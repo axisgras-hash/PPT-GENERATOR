@@ -107,7 +107,7 @@ def agent_prompt(query):
 def run_agent(leader_agent, query):
   prompt = f"""Based on Below given Query,
   your task is to call specific tool, first to
-  promptify user prompt,or
+  promptify user prompt
   latest search if required.give slide dynamic, ui ux,
   with creative design, keep help of function to generate image
   based on given topic,
@@ -117,8 +117,8 @@ def run_agent(leader_agent, query):
   give Final response output in HTML, no markdowns
   user query given below:
   """
-
-  prompt = agent_prompt(prompt+query)
+  prompt+= query
+  prompt = agent_prompt(prompt)
   response = leader_agent.invoke({'messages':[{'role':'user',
                                               'content':prompt}]})
   code = response['messages'][-1].content[-1]['text']
