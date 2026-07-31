@@ -139,7 +139,7 @@ tab1,tab2,tab3 = st.tabs(["Generate Image",
                          "Generate PPT"])
 
 
-if (user_input) and (agent):
+if (user_input) and (leader_agent):
   # TAB 1 Code
   with tab1:
     if st.button("Generate Image", keys = "Gen-Image"):
