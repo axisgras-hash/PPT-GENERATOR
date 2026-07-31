@@ -142,7 +142,7 @@ tab1,tab2,tab3 = st.tabs(["Generate Image",
 if (user_input) and (leader_agent):
   # TAB 1 Code
   with tab1:
-    if st.button("Generate Image", keys = "Gen-Image"):
+    if st.button("Generate Image", key = "Gen-Image"):
       with st.spinner("Running Agent"):
         try:
           generate_image(user_input)
@@ -153,7 +153,7 @@ if (user_input) and (leader_agent):
 
   # TAB 2 Code:
   with tab2:
-    if st.button("Fetch News", keys = "get-New"):
+    if st.button("Fetch News", key = "Fetch News"):
       with st.spinner("Running Agent"):
         try:
           prompt = "Give Multiple news in HTML card Format for topic" + user_input
@@ -166,7 +166,7 @@ if (user_input) and (leader_agent):
           st.error(err)
   # TAB 3 Code:
   with tab3:
-      if st.button("Generate PPT", keys = "Gen-PPT"):
+      if st.button("Generate PPT", key = "Gen-PPT"):
         with st.spinner("Running Agent"):
           try:
             code = run_agent(leader_agent,user_input)
